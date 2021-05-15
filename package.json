@@ -2,7 +2,10 @@
   "name": "node-dnslookup",
   "version": "0.0.1",
   "description": "Improve your dns lookup in NodeJS, more customizable.",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "files": [
+    "lib/"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

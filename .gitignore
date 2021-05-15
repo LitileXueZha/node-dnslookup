@@ -3,6 +3,7 @@ dist/
 .cache/
 coverage/
 .nyc_output/
+.vscode/
 
 yarn.lock
 package-lock.json
