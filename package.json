@@ -1,13 +1,16 @@
 {
   "name": "node-dnslookup",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Improve your dns lookup in NodeJS, more customizable.",
   "main": "lib/index.js",
   "files": [
     "lib/"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --parallel --recursive ./test/",
+    "report": "nyc mocha -p --recursive",
+    "coverage": "nyc --reporter=html --reporter=lcovonly npm test",
+    "eslintfix": "eslint --fix ./"
   },
   "repository": {
     "type": "git",
@@ -16,6 +19,7 @@
   "keywords": [
     "dns",
     "lookup",
+    "node",
     "ip",
     "hosts"
   ],
@@ -26,11 +30,14 @@
   },
   "homepage": "https://github.com/LitileXueZha/node-dnslookup#readme",
   "devDependencies": {
+    "chai": "^4.3.4",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.2.0",
     "eslint": "^7.26.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.22.1"
+    "eslint-plugin-import": "^2.22.1",
+    "mocha": "^8.4.0",
+    "nyc": "^15.1.0"
   },
   "config": {
     "commitizen": {
