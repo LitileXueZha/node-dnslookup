@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "test": "mocha --parallel --recursive ./test/",
-    "report": "nyc mocha -p --recursive",
+    "report": "nyc mocha -p --recursive --reporter=dot",
     "coverage": "nyc --reporter=html --reporter=lcovonly npm test",
     "eslintfix": "eslint --fix ./"
   },
