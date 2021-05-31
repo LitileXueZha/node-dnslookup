@@ -35,4 +35,19 @@ describe('DNSLookupPool', () => {
         // eslint-disable-next-line
         expect(pool.free()).to.be.false;
     });
+
+    it('callbackify free pool', () => {
+        const pool = new DNSLookupPool(2);
+        let i = 0;
+        const task = () => {
+            i += 1;
+            pool.free();
+        };
+
+        pool.submit(task);
+        pool.submit(task);
+        pool.submit(task);
+        pool.submit(task);
+        expect(i).to.equals(4);
+    });
 });
